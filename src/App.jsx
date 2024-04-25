@@ -72,7 +72,7 @@ function reset (){
     <div className="main">
       <Header/>
       <Instruction/>
-      <img src="src/assets/cook.jpg" alt="A lovely cookie" onClick={addCookies}/>
+      <img src="/cook.jpg" alt="A lovely cookie" onClick={addCookies}/>
       <p>My Cookies: {cookies}</p>
       <p>My Cookie-Upgrades (cps): {cps} </p>
       <button onClick={buyBronze} className="bronze">Bronze Upgrade / 10 cookies for 2cps</button><br />
