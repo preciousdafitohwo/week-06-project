@@ -12,6 +12,7 @@ padding: 5px;
 display: flex;
 flex-direction: column;
 width: 30vw;
+height: 100dvh;
 justify-content: center;
 align-items: stretch;
 border: 1px solid black;
