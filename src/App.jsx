@@ -2,6 +2,7 @@ import {useState, useEffect} from "react"
 import './App.css'
 import Instruction from "./Components/Instructions";
 import Header from "./Components/Header";
+import sound from "./assets/clickSound.wav"
 
 export default function App () {
   // const [cookies, setCookies] = useState(0);
@@ -12,10 +13,11 @@ export default function App () {
   const [cps, setCps] = useState(
     parseInt(localStorage.getItem("cps")) || 0
   );
-  function addCookies (){
-    setCookies((currentCookies) => {
-      return currentCookies + 1;
-    })
+ 
+  function addCookies() {
+    const click = new Audio(sound); 
+    click.play(); 
+    setCookies((currentCookies) => currentCookies + 1);
   }
 
 function buyBronze (){
@@ -56,7 +58,7 @@ useEffect(() => {
 
 // Store cookies and cookiesPerSecond to local storage
 useEffect(() => {
-  localStorage.setItem("cookies", cookies.toString()); // local storage supports strings so we convert it to a string before saving it
+  localStorage.setItem("cookies", cookies.toString()); 
   localStorage.setItem("cps", cps.toString());
 }, [cookies, cps]);
 
@@ -65,7 +67,6 @@ function reset (){
   setCookies(0);
   setCps(0);
 }
-
 
   return (
   
